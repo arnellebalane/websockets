@@ -14,7 +14,8 @@ npm install @arnellebalane/websockets
 On the server:
 
 ```js
-import websockets from 'websockets';
+import websockets from '@arnellebalane/websockets';
+// or: const websockets = require('@arnellebalane/websockets')
 
 const ws = websockets({
     server, // An http.Server object
@@ -33,7 +34,7 @@ ws.on('connection', socket => {
 On the client:
 
 ```js
-import websockets from 'websockets/client';
+import websockets from '@arnellebalane/websockets/client';
 
 const socket = websockets('ws://hostname/ws');
 
@@ -43,3 +44,7 @@ socket.on('greeting', data => {
     socket.emit('message', [1, 2, 3]);
 });
 ```
+
+## License
+
+MIT License

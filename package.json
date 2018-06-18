@@ -2,7 +2,7 @@
   "name": "@arnellebalane/websockets",
   "version": "1.0.0",
   "description": "A socket.io-like WebSocket server and client library on top of ws.",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "prebuild": "rimraf build",
     "build": "npm-run-all --parallel build:*",
@@ -13,6 +13,11 @@
   },
   "keywords": [
     "websockets"
+  ],
+  "files": [
+    "build",
+    "client.js",
+    "index.js"
   ],
   "author": "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)",
   "license": "MIT",

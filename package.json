@@ -1,0 +1,14 @@
+{
+  "name": "websockets",
+  "version": "1.0.0",
+  "description": "A socket.io-like WebSocket server and client library on top of ws.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "websockets"
+  ],
+  "author": "Arnelle Balane <arnellebalane@gmail.com> (https://arnellebalane.com/)",
+  "license": "MIT"
+}

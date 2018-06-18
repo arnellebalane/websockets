@@ -1,5 +1,5 @@
-const EventEmitter = require('events');
-const ws = require('ws');
+import EventEmitter from 'events';
+import ws from 'ws';
 
 class SocketWrapper extends EventEmitter {
     constructor(socket) {
@@ -37,4 +37,4 @@ function websocketFactory(config) {
     return serverWrapper;
 }
 
-module.exports = websocketFactory;
+export default websocketFactory;

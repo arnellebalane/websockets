@@ -43,4 +43,4 @@ function websocketFactory(url) {
     return new SocketWrapper(url);
 }
 
-module.exports = websocketFactory;
+export default websocketFactory;

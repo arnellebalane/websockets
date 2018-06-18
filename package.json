@@ -1,5 +1,5 @@
 {
-  "name": "websockets",
+  "name": "@arnellebalane/websockets",
   "version": "1.0.0",
   "description": "A socket.io-like WebSocket server and client library on top of ws.",
   "main": "index.js",

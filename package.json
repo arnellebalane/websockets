@@ -4,6 +4,8 @@
   "description": "A socket.io-like WebSocket server and client library on top of ws.",
   "main": "index.js",
   "scripts": {
+    "prebuild": "rimraf build",
+    "build": "npm-run-all --parallel build:*",
     "build:server": "babel --out-dir build index.js",
     "build:client": "webpack --output-filename websockets.umd.js",
     "build:client.min": "NODE_ENV=production webpack --output-filename webpack.umd.min.js",

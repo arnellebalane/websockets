@@ -11,11 +11,10 @@ npm install @arnellebalane/websockets
 
 ## Usage
 
-On the server:
+#### On the server:
 
 ```js
 import websockets from '@arnellebalane/websockets';
-// or: const websockets = require('@arnellebalane/websockets')
 
 const ws = websockets({
     server, // An http.Server object
@@ -31,7 +30,13 @@ ws.on('connection', socket => {
 });
 ```
 
-On the client:
+If you are using the usual `require()`, you can load this package through:
+
+```js
+const websockets = require('@arnellebalane/websockets').default;
+```
+
+#### On the client:
 
 ```js
 import websockets from '@arnellebalane/websockets/client';
@@ -45,6 +50,28 @@ socket.on('greeting', data => {
 });
 ```
 
+## API
+
+- `websockets(options)`
+  - Factory method for creating a new WebSocket server.
+  - Under the hood it just creates a new `ws.Server` object, and the `options` parameter passed to it is just passed directory to the `ws.Server` constructor. Refer to the [`ws`][1] docs for what options you can use.
+- `socket`
+  - A wrapper around the native `Socket` object representing the WebSocket connection, adding extra methods to make the event-based API possible.
+  - `socket.emit(name, data)`
+    - If called on the server, an event called `name` will be emitted on the client and the callback receives `data`.
+    - If called on the client, an event called `name` will be emitted on the server and the callback receives `data`.
+    - `name` (String): The name of the event.
+    - `data` (Any): Needs to be a JSON-serializable object.
+  - `socket.on(name, callback)`
+    - `name` (String): The name of the event to listen to.
+    - `callback` (Function)
+      - The function to execute when the event is emitted.
+      - Receives the `data` object from the `socket.emit` call.
+
 ## License
 
 MIT License
+
+
+[1]: https://www.npmjs.com/package/ws
+[2]: https://www.npmjs.com/package/socket.io
